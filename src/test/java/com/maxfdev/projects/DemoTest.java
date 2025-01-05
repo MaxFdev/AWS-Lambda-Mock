@@ -23,11 +23,8 @@ import java.util.logging.Logger;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import com.maxfdev.projects.LoggingServer;
-
 /**
  * @author Max Franklin
- * @author Noam Ben Simon
  * @apiNote the HTTPEndpoints for a server's summary and verbose files are as
  *          follows: {@code localhost:[serverPort + 1]/summary} and
  *          {@code localhost:[serverPort + 1]/verbose}
@@ -216,7 +213,7 @@ public class DemoTest {
                     "java",
                     "-cp",
                     System.getProperty("java.class.path"),
-                    "edu.yu.cs.com3800.stage5.DemoTest$DemoGatewayServer",
+                    "com.maxfdev.projects.DemoTest$DemoGatewayServer",
                     String.valueOf(GATEWAYPORT), // int httpPort
                     String.valueOf(gatewayPort), // int peerPort
                     "0", // long peerEpoch
@@ -240,7 +237,7 @@ public class DemoTest {
                             "java",
                             "-cp",
                             System.getProperty("java.class.path"),
-                            "edu.yu.cs.com3800.stage5.DemoTest$DemoPeerServer",
+                            "com.maxfdev.projects.DemoTest$DemoPeerServer",
                             String.valueOf(entry.getValue().getPort()), // int udpPort
                             "0", // long peerEpoch
                             String.valueOf(entry.getKey()), // Long serverID
