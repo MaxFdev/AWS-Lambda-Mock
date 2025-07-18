@@ -1,5 +1,5 @@
 Image: /images/projects/lambda.png
 Rank: 2
-Color: #ffcc00
+Color: #e16b4c
 
 This was a project for my distributed systems class, focused on creating a program that could process code in a serverless manor across many nodes. The distributed systems has a gateway node and several peer server nodes. The gateway node is used to handle the user facing API, primarily for accepting requests to process code, and caching requests. The peer server nodes are used for the backend, they start by electing a leader using a ZooKeeper based algorithm. The leader will communicate with the gateway to assign work to all other nodes (workers). The worker nodes will individually process code and return results to the leader, which are then relayed to the gateway. Once the gateway receives the results, it prepares them to be sent back to the client. All nodes use a Gossip style heartbeat algorithm to detect node failure. When failure is discovered by a node, that node will take measures to ensure the continued service to the client. Nodes can start new elections in the event that the leader fails, and the leader can reassign work when a worker fails. All together, when the nodes are all started, they will form a robust distributed cluster, perfect for processing any code thrown at it.
