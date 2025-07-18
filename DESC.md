@@ -1,3 +1,4 @@
+Image: /images/projects/lambda.png
 Rank: 2
 Color: #ffcc00
 
